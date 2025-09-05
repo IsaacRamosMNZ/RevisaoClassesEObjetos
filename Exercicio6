@@ -1,0 +1,54 @@
+//Main
+
+package exercicio6;
+
+
+public class Exercicio6 {
+
+
+    public static void main(String[] args) {
+        
+      
+        Contador contador = new Contador(0);
+
+        contador.exibirValor();
+
+        contador.incrementar();
+        contador.incrementar();
+        contador.incrementar();
+
+     
+        contador.decrementar();
+
+      
+        contador.exibirValor();
+    }
+}
+//Classe
+package exercicio6;
+
+public class Contador {
+    
+    int valor;
+
+    public Contador(int valorInicial) {
+        this.valor = valorInicial;
+    }
+
+    
+    public void incrementar() {
+        valor++;
+        System.out.println("Valor incrementado: " + valor);
+    }
+
+    
+    public void decrementar() {
+        valor--;
+        System.out.println("Valor decrementado: " + valor);
+    }
+
+    
+    public void exibirValor() {
+        System.out.println("Valor atual: " + valor);
+    }
+}
