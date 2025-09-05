@@ -1,0 +1,65 @@
+//Main
+package exercicio07;
+
+
+public class Exercicio07 {
+
+    public static void main(String[] args) {
+        
+
+        Estudante estudante = new Estudante("Jorge", 16);
+
+        
+        estudante.exibirDisciplinas();
+
+        
+        estudante.adicionarDisciplina("Matemática");
+        estudante.adicionarDisciplina("Português");
+        estudante.adicionarDisciplina("História");
+        estudante.adicionarDisciplina("Educação Física");
+
+        estudante.exibirDisciplinas();
+    }
+}
+
+//Classe 
+
+package exercicio07;
+
+import java.util.ArrayList;
+
+
+public class Estudante {
+    
+
+  
+    String nome;
+    int idade;
+    ArrayList<String> disciplinas;
+
+ 
+    public Estudante(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+        this.disciplinas = new ArrayList<>(); // Inicializa a lista
+    }
+
+   
+    public void adicionarDisciplina(String disciplina) {
+        disciplinas.add(disciplina);
+        System.out.println("Disciplina '" + disciplina + "' adicionada com sucesso!");
+    }
+
+    
+    public void exibirDisciplinas() {
+        System.out.println("\nDisciplinas matriculadas de " + nome + ":");
+        if (disciplinas.isEmpty()) {
+            System.out.println("Nenhuma disciplina cadastrada.");
+        } else {
+            for (int i = 0; i < disciplinas.size(); i++) {
+                System.out.println((i + 1) + " - " + disciplinas.get(i));
+            }
+        }
+        System.out.println("---------------------------------------");
+    }
+}
