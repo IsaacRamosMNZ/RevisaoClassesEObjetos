@@ -1,0 +1,74 @@
+//Main
+
+package exercicio04;
+
+public class Exercicio04 {
+
+   
+    public static void main(String[] args) {
+
+
+    
+        Livro livro1 = new Livro("O Senhor dos Anéis", "J.R.R. Tolkien", 1200, 3);
+
+        
+        livro1.exibirInfo();
+
+  
+        livro1.emprestar();
+        livro1.emprestar();
+        livro1.emprestar();
+        livro1.emprestar(); // Vai dar erro porque não tem mais livros
+
+     
+        livro1.devolver();
+        livro1.devolver();
+
+        livro1.exibirInfo();
+    }
+}
+
+//classe
+
+package exercicio04;
+
+
+public class Livro {
+     
+    String titulo;
+    String autor;
+    int numeroPaginas;
+    int exemplaresDisponiveis;
+
+  
+    public Livro(String titulo, String autor, int numeroPaginas, int exemplaresDisponiveis) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numeroPaginas = numeroPaginas;
+        this.exemplaresDisponiveis = exemplaresDisponiveis;
+    }
+
+    
+    public void emprestar() {
+        if (exemplaresDisponiveis > 0) {
+            exemplaresDisponiveis--;
+            System.out.println("Livro emprestado com sucesso! Exemplares restantes: " + exemplaresDisponiveis);
+        } else {
+            System.out.println("Não há exemplares disponíveis para empréstimo.");
+        }
+    }
+
+  
+    public void devolver() {
+        exemplaresDisponiveis++;
+        System.out.println("Livro devolvido! Exemplares disponíveis agora: " + exemplaresDisponiveis);
+    }
+
+    public void exibirInfo() {
+        System.out.println("Título: " + titulo);
+        System.out.println("Autor: " + autor);
+        System.out.println("Número de páginas: " + numeroPaginas);
+        System.out.println("Exemplares disponíveis: " + exemplaresDisponiveis);
+        System.out.println("-------------------------------------");
+    }
+}
